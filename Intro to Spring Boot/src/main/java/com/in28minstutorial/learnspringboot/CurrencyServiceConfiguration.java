@@ -1,4 +1,4 @@
-package com.minstutorial.learnspringboot;
+package com.in28minstutorial.learnspringboot;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

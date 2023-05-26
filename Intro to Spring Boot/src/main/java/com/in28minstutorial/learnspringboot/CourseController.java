@@ -1,4 +1,4 @@
-package com.minstutorial.learnspringboot;
+package com.in28minstutorial.learnspringboot;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

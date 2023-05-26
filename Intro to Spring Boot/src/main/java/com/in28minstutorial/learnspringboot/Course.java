@@ -1,4 +1,4 @@
-package com.minstutorial.learnspringboot;
+package com.in28minstutorial.learnspringboot;
 
 public class Course {
     private long id;
