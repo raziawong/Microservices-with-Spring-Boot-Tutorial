@@ -6,7 +6,7 @@ public class FP01Functional {
 
     public static void main(String[] args) {
         List<Integer> numbers = List.of(12,9,13,4,6,2,4,12,15);
-        List<String> courses = List.of("Spring", "Spring Boot", "API", "Mircoservices", "AWS", "PCF", "Azure", "Docker", "Kubernetes");
+        List<String> courses = List.of("Spring", "Spring Boot", "API", "Microservices", "AWS", "PCF", "Azure", "Docker", "Kubernetes");
 
         System.out.print("Print all numbers: ");
         printAllInList(numbers);
@@ -19,6 +19,12 @@ public class FP01Functional {
 
         System.out.print("\nPrint all courses: ");
         printAllInList(courses);
+
+        System.out.print("\nPrint all courses containing the word \"Spring\": ");
+        findStringInList(courses, "Spring");
+
+        System.out.print("\nPrint all courses with at least 4 letters: ");
+        findStringByLengthInList(courses, 4);
     }
 
 //    private static boolean isEven(int number) {
@@ -33,13 +39,25 @@ public class FP01Functional {
     private static void printEvenNumbersInList(List<Integer> numbers) {
         numbers.stream()
                 // .filter(FP01Functional::isEven) // using Method Reference
-                .filter(num -> num%2 == 0) // using Lambda expression
+                .filter(num -> num % 2 == 0) // using Lambda expression
                 .forEach(i -> System.out.print(i + " | "));
     }
 
     private static void printOddNumbersInList(List<Integer> numbers) {
         numbers.stream()
-                .filter(num -> num%2 != 0)
+                .filter(num -> num % 2 != 0)
                 .forEach(i -> System.out.print(i + " | "));
+    }
+
+    private static void findStringInList(List<String> strings, String targetStr) {
+        strings.stream()
+                .filter(str -> str.contains(targetStr))
+                .forEach(str -> System.out.print(str + " | "));
+    }
+
+    private static void findStringByLengthInList(List<String> strings, int length) {
+        strings.stream()
+                .filter(str -> str.trim().length() >= length)
+                .forEach(str -> System.out.print(str + " | "));
     }
 }
